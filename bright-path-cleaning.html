@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bright Path Cleaning — Cleveland, OH</title>
+<meta name="description" content="Residential cleaning service for Greater Cleveland. Weekly, bi-weekly, monthly, and one-time deep cleans. Insured, bonded, and trusted." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FDFCF9;
+  --bg-soft: #F4F1EB;
+  --bg-blue: #EBF2F5;
+  --ink: #1A2530;
+  --ink-soft: #4A5560;
+  --muted: #8A8F95;
+  --sky: #5A8FA8;
+  --sky-deep: #3D6E85;
+  --sage: #8FA888;
+  --sage-light: #BFD0B8;
+  --gold: #C8A060;
+  --line: rgba(26,37,48,0.1);
+  --display: 'Cormorant Garamond', serif;
+  --body: 'Outfit', sans-serif;
+  --max: 1200px;
+  --gutter: clamp(20px, 5vw, 70px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+input { font-family: inherit; }
+::selection { background: var(--sky); color: white; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px var(--gutter);
+  background: rgba(253,252,249,0.85);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em; }
+.nav-logo-mark {
+  width: 36px; height: 36px; background: linear-gradient(135deg, var(--sky), var(--sky-deep));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 16px; font-weight: 600;
+}
+.nav-links { display: flex; gap: 30px; font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+.nav-links a { transition: color 0.2s; }
+.nav-links a:hover { color: var(--sky-deep); }
+.nav-cta {
+  background: var(--ink); color: white;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.02em;
+  padding: 11px 22px; border-radius: 999px; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sky-deep); }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* HERO — bright airy with photo */
+.hero {
+  position: relative; padding: 130px var(--gutter) 80px; overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: 70px; align-items: center;
+  max-width: var(--max); margin: 0 auto;
+}
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 110px; } }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 8px 16px; background: var(--bg-blue); border-radius: 999px;
+  font-size: 12px; font-weight: 500; color: var(--sky-deep);
+  letter-spacing: 0.04em; margin-bottom: 24px;
+}
+.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #2eb350; border-radius: 50%; box-shadow: 0 0 0 4px rgba(46,179,80,0.18); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 4px rgba(46,179,80,0.18); } 50% { box-shadow: 0 0 0 8px rgba(46,179,80,0.04); } }
+
+h1.hero-h1 {
+  font-family: var(--display); font-size: clamp(48px, 8vw, 100px);
+  font-weight: 500; line-height: 1; letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+h1.hero-h1 em { font-style: italic; font-weight: 400; color: var(--sky-deep); }
+
+.hero-sub {
+  font-size: clamp(16px, 1.5vw, 19px); font-weight: 300;
+  color: var(--ink-soft); max-width: 480px;
+  line-height: 1.7; margin-bottom: 36px;
+}
+
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn-primary {
+  background: var(--ink); color: white; border: none;
+  font-size: 15px; font-weight: 500; padding: 16px 28px;
+  border-radius: 999px; transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--sky-deep); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(61,110,133,0.3); }
+
+.btn-outline {
+  border: 1px solid var(--line); color: var(--ink);
+  background: white; font-size: 15px; font-weight: 500;
+  padding: 16px 28px; border-radius: 999px;
+  transition: all 0.25s;
+}
+.btn-outline:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+.hero-trust { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); font-weight: 500; }
+.hero-trust-icon {
+  width: 28px; height: 28px; background: var(--sage-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink); font-size: 13px; font-weight: 700;
+}
+
+/* Hero photo collage */
+.hero-photo-wrap {
+  position: relative; aspect-ratio: 4 / 5;
+  display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 14px;
+}
+.hero-photo-main {
+  grid-row: 1 / 3;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(26,37,48,0.15);
+  position: relative;
+}
+.hero-photo-main::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.2));
+}
+.hero-photo-2 {
+  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(26,37,48,0.1);
+}
+.hero-photo-3 {
+  background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(26,37,48,0.1);
+}
+
+.hero-floating-card {
+  position: absolute;
+  top: 30px; left: -30px;
+  background: white; border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 12px 40px rgba(26,37,48,0.12);
+  display: flex; align-items: center; gap: 14px;
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.hero-floating-card-stars { color: var(--gold); font-size: 12px; letter-spacing: 0.1em; }
+.hero-floating-card-text { font-size: 13px; font-weight: 600; color: var(--ink); }
+.hero-floating-card-meta { font-size: 11px; color: var(--muted); }
+@media (max-width: 900px) { .hero-floating-card { left: 12px; } }
+
+.hero-stat-card {
+  position: absolute;
+  bottom: 30px; right: -20px;
+  background: var(--ink); color: white;
+  border-radius: 14px; padding: 20px 24px;
+  box-shadow: 0 12px 40px rgba(26,37,48,0.25);
+  z-index: 3;
+}
+.hero-stat-num { font-family: var(--display); font-size: 36px; font-weight: 600; line-height: 1; color: var(--sage-light); }
+.hero-stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
+@media (max-width: 900px) { .hero-stat-card { right: 12px; } }
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--bg-soft); padding: 28px var(--gutter);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.trust-bar-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 30px;
+}
+.trust-bar-item { display: flex; align-items: center; gap: 12px; }
+.trust-bar-icon { font-size: 22px; }
+.trust-bar-text { font-size: 14px; font-weight: 500; }
+.trust-bar-divider { font-size: 12px; color: var(--muted); }
+
+/* SECTIONS */
+.section { padding: clamp(80px, 10vw, 130px) var(--gutter); }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--sky-deep); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--sky-deep); }
+.section-eyebrow.center { justify-content: center; }
+.section-eyebrow.center::before { display: none; }
+h2.section-h2 {
+  font-family: var(--display); font-size: clamp(42px, 6vw, 76px);
+  font-weight: 500; letter-spacing: -0.02em; line-height: 1;
+  margin-bottom: 24px;
+}
+h2.section-h2 em { font-style: italic; font-weight: 400; color: var(--sky-deep); }
+.section-intro {
+  font-size: 17px; color: var(--ink-soft); line-height: 1.7;
+  max-width: 580px; margin-bottom: 60px;
+}
+
+/* SERVICES — image cards */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
+@media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+
+.service-card {
+  background: white; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+  display: flex; flex-direction: column;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,37,48,0.12); }
+.service-card-img {
+  aspect-ratio: 16 / 11;
+  background-size: cover; background-position: center;
+  position: relative; overflow: hidden;
+}
+.service-card-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.15));
+}
+.service-card-tag {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.95); color: var(--ink);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 6px 12px; border-radius: 999px;
+}
+.service-card-body { padding: 28px 26px; flex: 1; display: flex; flex-direction: column; }
+.service-card-title {
+  font-family: var(--display); font-size: 28px; font-weight: 600;
+  letter-spacing: -0.01em; margin-bottom: 10px; line-height: 1.1;
+}
+.service-card-desc { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; flex: 1; margin-bottom: 18px; }
+.service-card-features { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 8px; }
+.service-card-features li { font-size: 13px; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 8px; }
+.service-card-features li::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+.service-card-price {
+  display: flex; align-items: baseline; gap: 8px;
+  padding-top: 18px; border-top: 1px solid var(--line);
+}
+.service-card-price-from { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; }
+.service-card-price-amount {
+  font-family: var(--display); font-size: 32px; font-weight: 600;
+  color: var(--ink); line-height: 1;
+}
+.service-card-price-meta { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+/* PROCESS */
+.process { background: var(--bg-soft); }
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+  margin-top: 60px;
+}
+@media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+.process-step { display: flex; flex-direction: column; gap: 14px; }
+.process-step-num {
+  font-family: var(--display); font-size: 56px; font-weight: 600;
+  color: var(--sky); line-height: 1; letter-spacing: -0.02em;
+}
+.process-step-num em { font-style: italic; color: var(--sky-deep); }
+.process-step-title { font-family: var(--display); font-size: 24px; font-weight: 600; line-height: 1.1; }
+.process-step-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+/* PRICING CALCULATOR */
+.calculator {
+  background: linear-gradient(135deg, var(--ink) 0%, #2A3845 100%);
+  color: white;
+  position: relative; overflow: hidden;
+}
+.calculator::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(143,168,136,0.2), transparent 70%);
+  border-radius: 50%;
+}
+.calculator h2 { color: white; }
+.calculator h2 em { color: var(--sage-light); }
+.calculator .section-eyebrow { color: var(--sage-light); }
+.calculator .section-eyebrow::before { background: var(--sage-light); }
+.calculator .section-intro { color: rgba(255,255,255,0.7); }
+
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; position: relative; z-index: 2; }
+@media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-controls {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 36px;
+  backdrop-filter: blur(10px);
+}
+.calc-control { margin-bottom: 28px; }
+.calc-control:last-child { margin-bottom: 0; }
+.calc-label {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85); margin-bottom: 14px;
+}
+.calc-label-value { color: var(--sage-light); font-weight: 700; }
+.calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.calc-option {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  font-size: 13px; font-weight: 500; padding: 12px 14px;
+  border-radius: 8px; cursor: pointer; transition: all 0.2s;
+  text-align: center;
+}
+.calc-option:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.calc-option.active { background: var(--sage-light); color: var(--ink); border-color: var(--sage-light); font-weight: 600; }
+
+.calc-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; background: rgba(255,255,255,0.1);
+  border-radius: 3px; outline: none;
+  cursor: pointer;
+}
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 24px; height: 24px;
+  background: var(--sage-light); border: 4px solid white;
+  border-radius: 50%; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.calc-slider::-moz-range-thumb {
+  width: 24px; height: 24px;
+  background: var(--sage-light); border: 4px solid white;
+  border-radius: 50%; cursor: pointer;
+}
+
+.calc-result {
+  background: white; color: var(--ink);
+  border-radius: 16px; padding: 36px;
+  position: sticky; top: 100px;
+}
+.calc-result-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.calc-result-price {
+  font-family: var(--display); font-size: 84px; font-weight: 600; line-height: 1;
+  letter-spacing: -0.03em; margin-bottom: 6px; color: var(--sky-deep);
+  display: flex; align-items: baseline; gap: 6px;
+}
+.calc-result-price-currency { font-size: 32px; }
+.calc-result-price-meta { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+.calc-result-summary { padding: 20px; background: var(--bg-soft); border-radius: 10px; margin-bottom: 24px; }
+.calc-result-summary-row {
+  display: flex; justify-content: space-between; padding: 6px 0;
+  font-size: 14px; color: var(--ink-soft);
+}
+.calc-result-summary-row strong { color: var(--ink); }
+.calc-result-cta {
+  background: var(--ink); color: white; border: none;
+  font-size: 14px; font-weight: 500; padding: 16px 24px;
+  border-radius: 999px; width: 100%;
+  transition: background 0.2s;
+}
+.calc-result-cta:hover { background: var(--sky-deep); }
+.calc-result-disclaimer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.5; }
+
+/* TESTIMONIALS — Google review style */
+.testimonials-header {
+  display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; margin-bottom: 50px;
+}
+@media (max-width: 768px) { .testimonials-header { grid-template-columns: 1fr; } }
+.google-rating-card {
+  background: white; border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 22px;
+  display: flex; align-items: center; gap: 16px;
+}
+.google-rating-mark {
+  width: 44px; height: 44px; min-width: 44px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700;
+  background: linear-gradient(45deg, #4285F4 25%, #EA4335 25% 50%, #FBBC04 50% 75%, #34A853 75%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-family: 'Outfit', sans-serif;
+}
+.google-rating-text { display: flex; flex-direction: column; }
+.google-rating-num { font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.google-rating-stars { color: var(--gold); font-size: 12px; }
+.google-rating-meta { font-size: 12px; color: var(--muted); }
+
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+.review-card {
+  background: white; border: 1px solid var(--line);
+  border-radius: 14px; padding: 26px 24px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.review-card:hover { border-color: var(--sky); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,37,48,0.08); }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.review-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background-size: cover; background-position: center;
+}
+.review-name { font-size: 15px; font-weight: 600; }
+.review-meta { font-size: 12px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
+.review-stars { color: var(--gold); font-size: 13px; letter-spacing: 0.05em; margin-bottom: 12px; }
+.review-body {
+  font-size: 14.5px; color: var(--ink-soft); line-height: 1.65;
+}
+.review-body em { font-style: normal; background: linear-gradient(transparent 60%, var(--sage-light) 60%); padding: 0 2px; }
+
+/* CTA BLEED */
+.cta-bleed {
+  position: relative; padding: clamp(80px, 12vw, 150px) var(--gutter);
+  text-align: center; overflow: hidden; isolation: isolate;
+  color: white;
+}
+.cta-bleed::before {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1800&q=80&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  filter: brightness(0.55);
+}
+.cta-bleed::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(26,37,48,0.6), rgba(26,37,48,0.85));
+}
+.cta-bleed-h2 {
+  font-family: var(--display); font-size: clamp(42px, 7vw, 96px);
+  font-weight: 500; letter-spacing: -0.02em; line-height: 1.05;
+  margin-bottom: 22px;
+}
+.cta-bleed-h2 em { font-style: italic; color: var(--sage-light); }
+.cta-bleed-sub { font-size: 18px; opacity: 0.85; max-width: 540px; margin: 0 auto 40px; line-height: 1.6; }
+.cta-bleed-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-light { background: white; color: var(--ink); border: none; font-size: 15px; font-weight: 500; padding: 16px 32px; border-radius: 999px; transition: all 0.2s; }
+.btn-light:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,255,255,0.2); }
+.btn-light-outline { border: 1px solid rgba(255,255,255,0.3); color: white; background: transparent; font-size: 15px; font-weight: 500; padding: 16px 32px; border-radius: 999px; transition: all 0.2s; }
+.btn-light-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
+
+/* CONTACT */
+.contact { background: var(--bg-soft); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 50px;
+  align-items: start;
+}
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-card {
+  background: white; padding: 28px 26px; border-radius: 14px;
+  border: 1px solid var(--line); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 16px;
+  transition: border-color 0.3s;
+}
+.contact-card:hover { border-color: var(--sky); }
+.contact-icon {
+  width: 46px; height: 46px; min-width: 46px;
+  background: var(--bg-blue); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.contact-card-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.contact-card-value { font-size: 16px; font-weight: 600; color: var(--ink); }
+
+.contact-form {
+  background: white; border: 1px solid var(--line); border-radius: 16px; padding: 36px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.contact-form label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; background: var(--bg-soft); border: 1px solid transparent;
+  color: var(--ink); font-size: 15px; padding: 13px 15px;
+  border-radius: 8px; outline: none; transition: border-color 0.2s, background 0.2s;
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  border-color: var(--sky); background: white;
+}
+.contact-form textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.contact-submit {
+  background: var(--ink); color: white; border: none;
+  font-size: 15px; font-weight: 500; padding: 16px 24px;
+  border-radius: 999px; transition: background 0.2s;
+}
+.contact-submit:hover { background: var(--sky-deep); }
+
+/* FOOTER */
+footer { background: var(--ink); color: white; padding: 60px var(--gutter) 30px; }
+.footer-top { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+@media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+.footer-brand { font-family: var(--display); font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+.footer-tagline { font-size: 13px; opacity: 0.6; line-height: 1.6; max-width: 280px; }
+.footer-col-title { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 16px; }
+.footer-col li { font-size: 14px; opacity: 0.7; padding: 4px 0; }
+.footer-bottom { max-width: var(--max); margin: 30px auto 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 12px; opacity: 0.4; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* DEMO BADGE */
+.demo-banner {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: white;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 11px 22px; border-radius: 999px; z-index: 9998; white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  display: flex; align-items: center; gap: 8px;
+}
+.demo-banner::before { content: ''; width: 8px; height: 8px; background: var(--sage-light); border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">DEMO SITE — BUILT BY STUDIO NORTH</div>
+
+<nav>
+  <div class="nav-logo"><div class="nav-logo-mark">✦</div>Bright Path</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#calculator">Pricing</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+  <a href="#book" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Now Booking · Cleveland &amp; Suburbs</div>
+    <h1 class="hero-h1">Come home<br>to <em>clean.</em></h1>
+    <p class="hero-sub">Bright Path Cleaning offers thoughtful, thorough residential cleaning across Greater Cleveland. Recurring or one-time — same trusted team, every visit.</p>
+    <div class="hero-ctas">
+      <a href="#calculator" class="btn-primary">Get an Instant Estimate →</a>
+      <a href="tel:+12165550891" class="btn-outline">(216) 555-0891</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><div class="hero-trust-icon">✓</div>Insured &amp; Bonded</div>
+      <div class="hero-trust-item"><div class="hero-trust-icon">★</div>4.9 / 5 on Google</div>
+      <div class="hero-trust-item"><div class="hero-trust-icon">♻</div>Eco-Friendly Products</div>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-main"></div>
+    <div class="hero-photo-2"></div>
+    <div class="hero-photo-3"></div>
+    <div class="hero-floating-card">
+      <div>
+        <div class="hero-floating-card-stars">★★★★★</div>
+        <div class="hero-floating-card-text">"Spotless. Every time."</div>
+        <div class="hero-floating-card-meta">— Sarah M., Lakewood</div>
+      </div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hero-stat-num">300+</div>
+      <div class="hero-stat-label">Homes Cleaned</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-bar-item"><span class="trust-bar-icon">🛡️</span><span class="trust-bar-text">Fully Insured</span></div>
+    <span class="trust-bar-divider">•</span>
+    <div class="trust-bar-item"><span class="trust-bar-icon">🔒</span><span class="trust-bar-text">Bonded &amp; Background-Checked</span></div>
+    <span class="trust-bar-divider">•</span>
+    <div class="trust-bar-item"><span class="trust-bar-icon">🌿</span><span class="trust-bar-text">Eco-Friendly Products</span></div>
+    <span class="trust-bar-divider">•</span>
+    <div class="trust-bar-item"><span class="trust-bar-icon">✓</span><span class="trust-bar-text">100% Satisfaction Guarantee</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-h2">Cleaning, the way<br><em>it should be done.</em></h2>
+      <p class="section-intro">Choose what fits your home and your schedule. Every clean is performed by our trained, vetted team — never a rotating crew of strangers.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop')">
+          <span class="service-card-tag">Most Popular</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Recurring Clean</div>
+          <div class="service-card-desc">Weekly, bi-weekly, or monthly. Same team, consistent quality, predictable schedule.</div>
+          <ul class="service-card-features">
+            <li>Kitchens, bathrooms, common areas</li>
+            <li>Dusting, vacuuming, mopping</li>
+            <li>Trash &amp; recycling out</li>
+          </ul>
+          <div class="service-card-price">
+            <span class="service-card-price-from">From</span>
+            <span class="service-card-price-amount">$120</span>
+            <span class="service-card-price-meta">per visit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80&auto=format&fit=crop')">
+          <span class="service-card-tag">Top Rated</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Deep Clean</div>
+          <div class="service-card-desc">Top-to-bottom reset. Baseboards, ceiling fans, cabinet fronts, behind appliances — all of it.</div>
+          <ul class="service-card-features">
+            <li>Inside oven &amp; refrigerator</li>
+            <li>Baseboards &amp; door frames</li>
+            <li>Window sills &amp; tracks</li>
+          </ul>
+          <div class="service-card-price">
+            <span class="service-card-price-from">From</span>
+            <span class="service-card-price-amount">$280</span>
+            <span class="service-card-price-meta">one-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1581795669633-91ef7c9699a8?w=800&q=80&auto=format&fit=crop')">
+          <span class="service-card-tag">For Renters</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Move In / Move Out</div>
+          <div class="service-card-desc">Empty home? We'll get it spotless before you list, sell, or move. Includes deep clean checklist.</div>
+          <ul class="service-card-features">
+            <li>Inside cabinets &amp; drawers</li>
+            <li>All appliances thoroughly</li>
+            <li>Walls, doors, light fixtures</li>
+          </ul>
+          <div class="service-card-price">
+            <span class="service-card-price-from">From</span>
+            <span class="service-card-price-amount">$320</span>
+            <span class="service-card-price-meta">one-time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-h2">Four steps to a<br><em>cleaner home.</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-step-num"><em>01</em></div>
+        <div class="process-step-title">Get a Quote</div>
+        <div class="process-step-desc">Use our calculator or call us. We'll give you a fair, transparent estimate within an hour.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-step-num"><em>02</em></div>
+        <div class="process-step-title">Walk-Through</div>
+        <div class="process-step-desc">For larger jobs, we'll do a quick walk-through to lock in scope and answer your questions.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-step-num"><em>03</em></div>
+        <div class="process-step-title">First Clean</div>
+        <div class="process-step-desc">Our team shows up on time, in uniform, with everything we need. You don't have to lift a finger.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-step-num"><em>04</em></div>
+        <div class="process-step-title">Stay Bright</div>
+        <div class="process-step-desc">Set up recurring service or book one-time as needed. Same team, every visit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CALCULATOR -->
+<section class="section calculator" id="calculator">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto;">
+      <div class="section-eyebrow center" style="justify-content:center;">Instant Estimate</div>
+      <h2 class="section-h2">Get a price in<br><em>30 seconds.</em></h2>
+      <p class="section-intro" style="margin-left:auto;margin-right:auto;">No phone tag, no waiting. Slide and tap to build your custom estimate. Final price confirmed at walk-through.</p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="calc-controls reveal">
+        <div class="calc-control">
+          <div class="calc-label">Service type<span class="calc-label-value" id="calc-service-display">Recurring Clean</span></div>
+          <div class="calc-options" id="calc-service">
+            <div class="calc-option active" data-service="recurring" data-base="120">Recurring</div>
+            <div class="calc-option" data-service="deep" data-base="280">Deep Clean</div>
+            <div class="calc-option" data-service="move" data-base="320">Move In/Out</div>
+          </div>
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-label">Bedrooms<span class="calc-label-value" id="calc-bed-display">3 bedrooms</span></div>
+          <input type="range" class="calc-slider" id="calc-bed" min="1" max="6" value="3" step="1">
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-label">Bathrooms<span class="calc-label-value" id="calc-bath-display">2 bathrooms</span></div>
+          <input type="range" class="calc-slider" id="calc-bath" min="1" max="5" value="2" step="1">
+        </div>
+
+        <div class="calc-control">
+          <div class="calc-label">Frequency<span class="calc-label-value" id="calc-freq-display">Bi-weekly</span></div>
+          <div class="calc-options" id="calc-freq">
+            <div class="calc-option" data-freq="weekly" data-mult="0.85">Weekly</div>
+            <div class="calc-option active" data-freq="biweekly" data-mult="1">Bi-weekly</div>
+            <div class="calc-option" data-freq="monthly" data-mult="1.1">Monthly</div>
+            <div class="calc-option" data-freq="onetime" data-mult="1.25">One-time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result reveal">
+        <div class="calc-result-label">Your Estimate</div>
+        <div class="calc-result-price">
+          <span class="calc-result-price-currency">$</span>
+          <span id="calc-total">160</span>
+        </div>
+        <div class="calc-result-price-meta" id="calc-meta">per visit · billed after each clean</div>
+        <div class="calc-result-summary">
+          <div class="calc-result-summary-row"><span>Service</span><strong id="sum-service">Recurring Clean</strong></div>
+          <div class="calc-result-summary-row"><span>Home size</span><strong id="sum-size">3 BR · 2 BA</strong></div>
+          <div class="calc-result-summary-row"><span>Frequency</span><strong id="sum-freq">Bi-weekly</strong></div>
+        </div>
+        <button class="calc-result-cta" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book This Estimate →</button>
+        <div class="calc-result-disclaimer">Final pricing confirmed at walk-through. We adjust for square footage, condition, and any add-ons.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="testimonials-header reveal">
+      <div>
+        <div class="section-eyebrow">From Real Customers</div>
+        <h2 class="section-h2">Reviews from<br><em>your neighbors.</em></h2>
+      </div>
+      <div class="google-rating-card">
+        <div class="google-rating-mark">G</div>
+        <div class="google-rating-text">
+          <div class="google-rating-num">4.9 <span class="google-rating-stars">★★★★★</span></div>
+          <div class="google-rating-meta">Based on 87 Google reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="review-card reveal">
+        <div class="review-header">
+          <div class="review-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop')"></div>
+          <div>
+            <div class="review-name">Sarah Martinez</div>
+            <div class="review-meta">Lakewood, OH · 2 weeks ago</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-body">"I've used three other cleaning services in Cleveland — Bright Path is the only one I've stuck with. <em>Same team every visit</em>, never had to re-explain anything. My house feels lived-in but cared for."</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-header">
+          <div class="review-avatar" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop')"></div>
+          <div>
+            <div class="review-name">James Patterson</div>
+            <div class="review-meta">Shaker Heights, OH · 1 month ago</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-body">"Booked the move-out clean for my rental — they got my deposit back, easy. <em>Showed up early, finished on time</em>, and the place looked better than when I moved in. Worth every penny."</div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-header">
+          <div class="review-avatar" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop')"></div>
+          <div>
+            <div class="review-name">Rachel Kim</div>
+            <div class="review-meta">Cleveland Heights, OH · 3 weeks ago</div>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-body">"Finally found a service that doesn't just push dust around. <em>The deep clean was thorough</em> — they cleaned spots I forgot existed. Already booked them bi-weekly going forward."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLEED -->
+<section class="cta-bleed">
+  <h2 class="cta-bleed-h2">Your home, but<br><em>brighter.</em></h2>
+  <p class="cta-bleed-sub">Book your first clean and see why 300+ Cleveland-area homes trust Bright Path.</p>
+  <div class="cta-bleed-actions">
+    <a href="#book" class="btn-light">Get Started →</a>
+    <a href="tel:+12165550891" class="btn-light-outline">(216) 555-0891</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="book">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-h2">Let's get you<br><em>on the schedule.</em></h2>
+      <p class="section-intro">Tell us a little about your place and we'll be in touch within a few hours with availability.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-card-label">Phone / Text</div><div class="contact-card-value">(216) 555-0891</div></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div><div class="contact-card-label">Email</div><div class="contact-card-value">hello@brightpathcleaning.com</div></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">⏰</div>
+          <div><div class="contact-card-label">Office Hours</div><div class="contact-card-value">Mon–Fri · 8am–6pm</div></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-card-label">Service Area</div><div class="contact-card-value">Cleveland &amp; suburbs</div></div>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div><label>Your Name</label><input type="text" placeholder="Sarah Martinez" required></div>
+          <div><label>Phone</label><input type="tel" placeholder="(216) 555-0000" required></div>
+        </div>
+        <div><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+        <div><label>Address (or just City)</label><input type="text" placeholder="Lakewood, OH" required></div>
+        <div class="form-row">
+          <div>
+            <label>Service Needed</label>
+            <select required>
+              <option value="">Choose...</option>
+              <option>Recurring Clean</option>
+              <option>One-Time Deep Clean</option>
+              <option>Move In / Move Out</option>
+              <option>Not sure — help me decide</option>
+            </select>
+          </div>
+          <div>
+            <label>Home Size</label>
+            <select required>
+              <option value="">Choose...</option>
+              <option>1 BR / 1 BA</option>
+              <option>2 BR / 1-2 BA</option>
+              <option>3 BR / 2 BA</option>
+              <option>4 BR / 2+ BA</option>
+              <option>5+ BR</option>
+            </select>
+          </div>
+        </div>
+        <div><label>Anything else we should know?</label><textarea placeholder="Pets, special requests, scheduling preferences..."></textarea></div>
+        <button type="submit" class="contact-submit" id="contactBtn">Request a Quote →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Bright Path</div>
+      <div class="footer-tagline">Trusted residential cleaning across Greater Cleveland. Insured, bonded, eco-friendly.</div>
+    </div>
+    <div class="footer-col"><div class="footer-col-title">Services</div><ul><li>Recurring Cleans</li><li>Deep Cleans</li><li>Move In / Out</li><li>Custom Requests</li></ul></div>
+    <div class="footer-col"><div class="footer-col-title">Service Area</div><ul><li>Cleveland</li><li>Lakewood · Shaker</li><li>Cleveland Heights</li><li>+ surrounding suburbs</li></ul></div>
+    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li>(216) 555-0891</li><li>hello@brightpath<br>cleaning.com</li><li>Mon–Fri · 8am–6pm</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Bright Path Cleaning · Insured &amp; Bonded · Cleveland, OH</span>
+    <span>Website by Studio North</span>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Calculator logic
+const state = {
+  serviceBase: 120,
+  serviceName: 'Recurring Clean',
+  freqMult: 1,
+  freqName: 'Bi-weekly',
+  bed: 3,
+  bath: 2
+};
+
+function recalc() {
+  const bedrooms = state.bed;
+  const bathrooms = state.bath;
+  // base + per-bed + per-bath, then multiply
+  const sizeAdj = (bedrooms - 2) * 25 + (bathrooms - 2) * 20;
+  let total = (state.serviceBase + sizeAdj) * state.freqMult;
+  total = Math.max(80, Math.round(total / 5) * 5);
+  document.getElementById('calc-total').textContent = total;
+
+  document.getElementById('sum-service').textContent = state.serviceName;
+  document.getElementById('sum-size').textContent = `${bedrooms} BR · ${bathrooms} BA`;
+  document.getElementById('sum-freq').textContent = state.freqName;
+  document.getElementById('calc-bed-display').textContent = `${bedrooms} bedroom${bedrooms === 1 ? '' : 's'}`;
+  document.getElementById('calc-bath-display').textContent = `${bathrooms} bathroom${bathrooms === 1 ? '' : 's'}`;
+  document.getElementById('calc-service-display').textContent = state.serviceName;
+  document.getElementById('calc-freq-display').textContent = state.freqName;
+
+  const meta = state.serviceName === 'Recurring Clean' ? 'per visit · billed after each clean' : 'one-time · billed after service';
+  document.getElementById('calc-meta').textContent = meta;
+}
+
+document.querySelectorAll('#calc-service .calc-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    document.querySelectorAll('#calc-service .calc-option').forEach(o => o.classList.remove('active'));
+    opt.classList.add('active');
+    state.serviceBase = parseFloat(opt.dataset.base);
+    state.serviceName = opt.textContent + (opt.dataset.service === 'recurring' ? ' Clean' : '');
+    if (opt.dataset.service === 'recurring') state.serviceName = 'Recurring Clean';
+    if (opt.dataset.service === 'deep') state.serviceName = 'Deep Clean';
+    if (opt.dataset.service === 'move') state.serviceName = 'Move In / Out';
+    recalc();
+  });
+});
+
+document.querySelectorAll('#calc-freq .calc-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    document.querySelectorAll('#calc-freq .calc-option').forEach(o => o.classList.remove('active'));
+    opt.classList.add('active');
+    state.freqMult = parseFloat(opt.dataset.mult);
+    state.freqName = opt.textContent;
+    recalc();
+  });
+});
+
+document.getElementById('calc-bed').addEventListener('input', e => { state.bed = parseInt(e.target.value); recalc(); });
+document.getElementById('calc-bath').addEventListener('input', e => { state.bath = parseInt(e.target.value); recalc(); });
+
+recalc();
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contactBtn');
+  btn.textContent = 'Sending...';
+  setTimeout(() => {
+    btn.textContent = '✓ Request Received — We\'ll Be In Touch Soon';
+    btn.style.background = '#5A8FA8';
+    setTimeout(() => { btn.textContent = 'Request a Quote →'; btn.style.background = ''; }, 4000);
+  }, 800);
+}
+</script>
+</body>
+</html>
