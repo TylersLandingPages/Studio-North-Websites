@@ -129,25 +129,70 @@
 })();
 
 /* ==============================================================
-   FORM HANDLING — replace with your backend/Formspree/etc.
+   FORM HANDLING — submits to Formspree via fetch (AJAX)
+   so the user stays on the page and sees the success animation.
+   The endpoint is read from the form's `action` attribute.
    ============================================================== */
 (function() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     const btn = form.querySelector('.form-submit');
     const original = btn.innerHTML;
+
+    // Prevent double-submits while in flight
+    if (btn.disabled) return;
+    btn.disabled = true;
+
     btn.innerHTML = 'Sending... ↗';
     btn.style.background = 'var(--accent)';
-    setTimeout(() => {
-      btn.innerHTML = '✓ Got it — I\'ll be in touch';
-      form.reset();
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method || 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' } // Formspree returns JSON when this is set
+      });
+
+      if (response.ok) {
+        // Success
+        btn.innerHTML = '✓ Got it — I\'ll be in touch';
+        form.reset();
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3500);
+      } else {
+        // Formspree returned an error (e.g. validation, rate-limit)
+        let msg = '✗ Something went wrong — try again';
+        try {
+          const data = await response.json();
+          if (data && Array.isArray(data.errors) && data.errors.length) {
+            msg = '✗ ' + data.errors.map(err => err.message).join(', ');
+          }
+        } catch (_) { /* ignore JSON parse errors */ }
+        btn.innerHTML = msg;
+        btn.style.background = '#c4391c';
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      }
+    } catch (err) {
+      // Network error
+      btn.innerHTML = '✗ Network error — try again';
+      btn.style.background = '#c4391c';
       setTimeout(() => {
         btn.innerHTML = original;
         btn.style.background = '';
-      }, 3500);
-    }, 900);
+        btn.disabled = false;
+      }, 4000);
+    }
   });
 })();
 
