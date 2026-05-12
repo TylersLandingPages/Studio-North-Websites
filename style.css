@@ -1423,10 +1423,26 @@ section { padding: clamp(80px, 10vw, 140px) 0; }
   max-width: var(--max);
   margin: 0 auto;
 }
+.buyout-inner-stacked {
+  display: block;
+}
+.buyout-inner-stacked .buyout-text {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+.buyout-inner-stacked .buyout-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (max-width: 880px) {
   .buyout-inner {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+  .buyout-inner-stacked .buyout-text {
+    text-align: left;
+    margin-bottom: 28px;
   }
 }
 .buyout-text .eyebrow {
@@ -1457,8 +1473,15 @@ section { padding: clamp(80px, 10vw, 140px) 0; }
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+.buyout-options-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 880px) {
+  .buyout-options-3 { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 600px) {
   .buyout-options { grid-template-columns: 1fr; }
+  .buyout-options-3 { grid-template-columns: 1fr; }
 }
 .buyout-card {
   background: rgba(245,241,234,0.04);
@@ -1483,8 +1506,17 @@ section { padding: clamp(80px, 10vw, 140px) 0; }
   border-color: var(--accent);
 }
 .buyout-card .badge {
+  position: absolute;
   top: -12px;
   right: 18px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
 }
 .buyout-card-name {
   font-family: var(--display);
